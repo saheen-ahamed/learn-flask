@@ -1,0 +1,23 @@
+ {% extends "layout.html" %}
+ {% block content %}
+    <h1>Welcome to flask demo</h1>
+<!--    url_for() used to access the static content
+        here this function used for routing
+        we need to pass the route function name -->
+    <a href="{{ url_for('about') }}">About us</a>
+    <table>
+        <tr>
+            <th>Author</th>
+            <th>Book</th>
+            <th>Published</th>
+        </tr>
+<!--        accessing data with jinja template engine-->
+        {% for blog in data %}
+        <tr>
+            <td>{{blog.author}}</td>
+            <td>{{blog.book}}</td>
+            <td>{{blog.published}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+ {% endblock content %}
